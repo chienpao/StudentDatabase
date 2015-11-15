@@ -57,7 +57,7 @@ public class MainActivity extends Activity implements OnClickListener,
     private SignInButton btnSignIn;
     private Button btnSignOut, btnRevokeAccess;
     private ImageView imgProfilePic;
-    private TextView txtName, txtEmail;
+    private TextView txtName, txtEmail, txtAppName;
     private RelativeLayout rlProfileLayout;
 
     @Override
@@ -71,6 +71,7 @@ public class MainActivity extends Activity implements OnClickListener,
         imgProfilePic = (ImageView) findViewById(R.id.imgProfilePic);
         txtName = (TextView) findViewById(R.id.txtName);
         txtEmail = (TextView) findViewById(R.id.txtEmail);
+        txtAppName = (TextView) findViewById(R.id.tv_app_name);
         rlProfileLayout = (RelativeLayout) findViewById(R.id.rlProfile);
 
         // Button click listeners
@@ -173,13 +174,15 @@ public class MainActivity extends Activity implements OnClickListener,
             btnSignIn.setVisibility(View.GONE);
             btnSignOut.setVisibility(View.VISIBLE);
             // Always set revoke button gone
-            btnRevokeAccess.setVisibility(View.VISIBLE);
+            btnRevokeAccess.setVisibility(View.GONE);
             rlProfileLayout.setVisibility(View.VISIBLE);
+            txtAppName.setVisibility(View.GONE);
         } else {
             btnSignIn.setVisibility(View.VISIBLE);
             btnSignOut.setVisibility(View.GONE);
             btnRevokeAccess.setVisibility(View.GONE);
             rlProfileLayout.setVisibility(View.GONE);
+            txtAppName.setVisibility(View.VISIBLE);
         }
     }
 
